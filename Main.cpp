@@ -11,7 +11,7 @@
 
 int main()
 {
-    std::cout << "\nFacture:\n";
+    std::cout << "Facture:\n";
     // Étape 1 : Créez quatres objets Meuble pour les éléments « FA 120 »
     auto fa120_1 = std::make_unique<Meuble>("FA 120", 67, 120, 70, 56);
     auto fa120_2 = std::make_unique<Meuble>("FA 120", 67, 120, 70, 56);
