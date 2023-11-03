@@ -59,7 +59,7 @@ Pour contribuer à ce projet, veuillez suivre ces étapes :
 5. Ouvrez une Pull Request
 
 ## Licence
-Ce projet est sous licence XYZ. Voir le fichier `LICENSE` pour plus d'informations.
+Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus d'informations.
 
 ## Contact
 LORSCHEIDER Julien - [julien.lorscheider@icloud.com](mailto:julien.lorscheider@icloud.com)
