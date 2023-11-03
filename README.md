@@ -62,4 +62,4 @@ Pour contribuer à ce projet, veuillez suivre ces étapes :
 Ce projet est sous licence XYZ. Voir le fichier `LICENSE` pour plus d'informations.
 
 ## Contact
-Votre nom - [VotreEmail@example.com](mailto:VotreEmail@example.com)
+LORSCHEIDER Julien - [julien.lorscheider@icloud.com](mailto:julien.lorscheider@icloud.com)
