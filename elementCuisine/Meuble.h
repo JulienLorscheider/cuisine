@@ -5,7 +5,7 @@
 #include <string>
 #include <memory>
 #include "ElementCuisine.h"
-#include "../Option/Option.h"
+#include "../option/Option.h"
 
 class Meuble : public ElementCuisine
 {
