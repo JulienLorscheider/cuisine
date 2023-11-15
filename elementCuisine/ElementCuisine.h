@@ -11,16 +11,6 @@ protected:
     std::string designation;
     double prix;
 
-    void copier(const ElementCuisine &orig)
-    {
-        designation = orig.designation;
-        prix = orig.prix;
-    }
-
-    virtual ~ElementCuisine()
-    {
-    }
-
 public:
     ElementCuisine(std::string d, double p) : designation(d), prix(p)
     {
@@ -28,15 +18,6 @@ public:
         {
             throw std::invalid_argument("Prix ne peut pas être négatif");
         }
-        if (d.empty())
-        {
-            throw std::invalid_argument("La désignation est vide");
-        }
-    }
-
-    ElementCuisine(const ElementCuisine &orig)
-    {
-        copier(orig);
     }
 
     virtual double getPrix() const
@@ -57,8 +38,6 @@ public:
     {
         return designation;
     }
-
-    virtual std::unique_ptr<ElementCuisine> clone() const = 0;
 
     virtual void affiche(std::ostream &s = std::cout, int indentation = 0, bool dernierElement = false) const
     {

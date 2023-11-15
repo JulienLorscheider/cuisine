@@ -12,15 +12,6 @@ class Materiau : public Option
 private:
     double pourcentage;
 
-    void copier(const Materiau &orig)
-    {
-        pourcentage = orig.pourcentage;
-    }
-
-    ~Materiau()
-    {
-    }
-
 public:
     Materiau(const std::string &description, double p) : Option(description), pourcentage(p)
     {
@@ -28,11 +19,6 @@ public:
         {
             throw std::invalid_argument("Pourcentage ne peut pas être négatif");
         }
-    }
-
-    Materiau(const Materiau &orig) : Option(orig)
-    {
-        copier(orig);
     }
 
     double getMajoration(const Meuble &meuble) const override

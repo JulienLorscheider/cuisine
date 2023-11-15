@@ -13,31 +13,10 @@ class Option
 protected:
     std::string description;
 
-    void copier(const Option &orig)
-    {
-        description = orig.description;
-    }
-
-    virtual ~Option()
-    {
-    }
-
 public:
-    Option(const std::string &s) : description(s)
-    {
-        if (s.empty())
-        {
-            throw std::invalid_argument("La description est vide");
-        }
-    }
-
-    Option(const Option &orig)
-    {
-        copier(orig);
-    }
-
+    Option(const std::string &s) : description(s) {}
+    virtual ~Option() {}
     virtual double getMajoration(const Meuble &meuble) const = 0;
-
     virtual void affiche(std::ostream &s = std::cout, int indentation = 0) const
     {
         s << std::string(indentation, '\t') << "Option: " << description << "\n";

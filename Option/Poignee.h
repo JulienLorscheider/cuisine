@@ -12,15 +12,6 @@ class Poignee : public Option
 private:
     double prix;
 
-    void copier(const Poignee &orig)
-    {
-        prix = orig.prix;
-    }
-
-    ~Poignee()
-    {
-    }
-
 public:
     Poignee(const std::string &description, double p) : Option(description), prix(p)
     {
@@ -28,11 +19,6 @@ public:
         {
             throw std::invalid_argument("Prix ne peut pas être négatif");
         }
-    }
-
-    Poignee(const Poignee &orig) : Option(orig)
-    {
-        copier(orig);
     }
 
     double getMajoration(const Meuble &meuble) const override
