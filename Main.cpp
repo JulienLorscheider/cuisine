@@ -75,7 +75,11 @@ int main()
     bx160.ajouterElement(std::move(capita160));
 
     // Étape 13 : Affichez le prix total de l'îlot
-    std::cout << bx160 << std::endl;
+    std::cout << bx160
+              << "\n\nLe prix total de la facture est de "
+              << bx160.getPrix() + fd40_1->getPrix() + fa120_1->getPrix() + fa120_2->getPrix() + fa120_3->getPrix() + fa120_4->getPrix()
+              << "€"
+              << std::endl;
 
     return 0;
 }
