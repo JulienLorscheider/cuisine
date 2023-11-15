@@ -11,8 +11,23 @@ class Ilot : public ElementCuisine
 private:
     std::vector<std::unique_ptr<ElementCuisine>> elements;
 
+    void copier(const Ilot &orig)
+    {
+        for (auto &opt : orig.elements)
+        {
+            elements.push_back(opt->clone());
+        }
+    }
+
 public:
-    Ilot(std::string d) : ElementCuisine(d, 0) {}
+    Ilot(std::string d) : ElementCuisine(d, 0)
+    {
+    }
+
+    Ilot(const Ilot &orig) : ElementCuisine(orig)
+    {
+        copier(orig);
+    }
 
     void ajouterElement(std::unique_ptr<ElementCuisine> element)
     {
@@ -32,6 +47,11 @@ public:
             prixTotal += element->getPrix();
         }
         return prixTotal * 0.9; // Applique une réduction de 10%
+    }
+
+    std::unique_ptr<ElementCuisine> clone() const override
+    {
+        return std::make_unique<Ilot>(*this);
     }
 
     void affiche(std::ostream &s = std::cout, int indentation = 0, bool dernierElement = false) const override
