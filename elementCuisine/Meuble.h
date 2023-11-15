@@ -34,10 +34,7 @@ public:
         }
     }
 
-    Meuble(const Meuble &orig) : ElementCuisine(orig)
-    {
-        copier(orig);
-    }
+    Meuble(const Meuble &orig) : ElementCuisine(orig) { copier(orig); }
 
     double getLargeur() const
     {
@@ -57,11 +54,6 @@ public:
     const std::vector<std::unique_ptr<Option>> &getOptions() const
     {
         return options;
-    }
-
-    std::unique_ptr<ElementCuisine> clone() const override
-    {
-        return std::make_unique<Meuble>(*this);
     }
 
     const Meuble &operator=(const Meuble &op)
