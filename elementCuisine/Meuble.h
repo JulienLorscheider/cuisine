@@ -89,6 +89,7 @@ public:
     {
         s << std::string(indentation, '\t') << "Meuble: " << getDesignation() << "\n"
           << std::string(indentation + 1, '\t') << "Prix(" << getPrix() << "€)\n"
+          << std::string(indentation + 1, '\t') << "Reduction(" << getReduction() << "%)\n"
           << std::string(indentation + 1, '\t') << "Largeur(" << getLargeur() << ")\n"
           << std::string(indentation + 1, '\t') << "Hauteur(" << getHauteur() << ")\n"
           << std::string(indentation + 1, '\t') << "Profondeur(" << getProfondeur() << ")\n"

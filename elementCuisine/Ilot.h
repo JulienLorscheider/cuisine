@@ -39,7 +39,8 @@ public:
     void affiche(std::ostream &s = std::cout, int indentation = 0, bool dernierElement = false) const override
     {
         s << std::string(indentation, '\t') << "Ilot: " << getDesignation() << "\n"
-          << std::string(indentation + 1, '\t') << "Prix: " << getPrix() << "\n"
+          << std::string(indentation + 1, '\t') << "Prix: " << getPrix() << "€\n"
+          << std::string(indentation + 1, '\t') << "Reduction: " << getReduction() << "%\n"
           << std::string(indentation + 1, '\t') << "Éléments :\n";
         for (size_t i = 0; i < elements.size(); ++i)
         {
