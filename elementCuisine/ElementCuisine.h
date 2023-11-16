@@ -65,7 +65,7 @@ public:
     virtual void affiche(std::ostream &s = std::cout, int indentation = 0, bool dernierElement = false) const
     {
         s << std::string(indentation, '\t') << "Element de cuisine : " << getDesignation() << "\n"
-          << std::string(indentation + 1, '\t') << "Prix : " << getPrix() << "€"
+          << std::string(indentation + 1, '\t') << "Prix : " << getPrix() << "€\n"
           << std::string(indentation + 1, '\t') << "Reduction : " << getReduction() * 100 << "%";
         if (!dernierElement)
         {
