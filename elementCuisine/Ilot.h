@@ -67,10 +67,4 @@ public:
     }
 };
 
-inline std::ostream &operator<<(std::ostream &s, const Ilot &op)
-{
-    op.affiche(s);
-    return s;
-}
-
 #endif

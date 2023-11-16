@@ -53,10 +53,4 @@ public:
     }
 };
 
-inline std::ostream &operator<<(std::ostream &s, const Poignee &op)
-{
-    op.affiche(s);
-    return s;
-}
-
 #endif

@@ -113,10 +113,4 @@ public:
     }
 };
 
-inline std::ostream &operator<<(std::ostream &s, const Meuble &op)
-{
-    op.affiche(s);
-    return s;
-}
-
 #endif
