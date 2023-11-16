@@ -25,8 +25,8 @@ private:
     }
 
 public:
-    Meuble(std::string d, double p, double l, double h, double prof)
-        : ElementCuisine(d, p), largeur(l), hauteur(h), profondeur(prof)
+    Meuble(std::string d, double p, double r, double l, double h, double prof)
+        : ElementCuisine(d, p, r), largeur(l), hauteur(h), profondeur(prof)
     {
         if (l <= 0 || h <= 0 || prof <= 0)
         {

@@ -10,11 +10,13 @@ class ElementCuisine
 protected:
     std::string designation;
     double prix;
+    double reduction;
 
     void copier(const ElementCuisine &orig)
     {
         designation = orig.designation;
         prix = orig.prix;
+        reduction = orig.reduction;
     }
 
     virtual ~ElementCuisine()
@@ -22,11 +24,15 @@ protected:
     }
 
 public:
-    ElementCuisine(std::string d, double p) : designation(d), prix(p)
+    ElementCuisine(std::string d, double p, double r) : designation(d), prix(p), reduction(r)
     {
         if (p < 0)
         {
             throw std::invalid_argument("Prix ne peut pas être négatif");
+        }
+        if (r < 0)
+        {
+            throw std::invalid_argument("Réduction ne peut pas être négative");
         }
         if (d.empty())
         {
@@ -41,7 +47,7 @@ public:
 
     virtual double getPrix() const
     {
-        return prix;
+        return prix - (prix * reduction);
     }
 
     void setPrix(double p)
@@ -51,6 +57,15 @@ public:
             throw std::invalid_argument("Prix ne peut pas être négatif");
         }
         prix = p;
+    }
+
+    void appliquerReduction(double r)
+    {
+        if (r <= 0)
+        {
+            throw std::invalid_argument("Réduction doit être supérieure à zéro");
+        }
+        reduction = r;
     }
 
     std::string getDesignation() const

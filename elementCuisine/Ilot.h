@@ -20,7 +20,7 @@ private:
     }
 
 public:
-    Ilot(std::string d) : ElementCuisine(d, 0)
+    Ilot(std::string d) : ElementCuisine(d, 0, 0)
     {
     }
 
