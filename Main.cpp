@@ -13,10 +13,10 @@ int main()
 {
     std::cout << "Facture:\n";
     // Étape 1 : Créez quatres objets Meuble pour les éléments « FA 120 »
-    auto fa120_1 = std::make_unique<Meuble>("FA 120", 67, 120, 70, 56);
-    auto fa120_2 = std::make_unique<Meuble>("FA 120", 67, 120, 70, 56);
-    auto fa120_3 = std::make_unique<Meuble>("FA 120", 67, 120, 70, 56);
-    auto fa120_4 = std::make_unique<Meuble>("FA 120", 67, 120, 70, 56);
+    auto fa120_1 = std::make_unique<Meuble>("FA 120", 67, 0, 120, 70, 56);
+    auto fa120_2 = std::make_unique<Meuble>("FA 120", 67, 0, 120, 70, 56);
+    auto fa120_3 = std::make_unique<Meuble>("FA 120", 67, 0, 120, 70, 56);
+    auto fa120_4 = std::make_unique<Meuble>("FA 120", 67, 0, 120, 70, 56);
 
     // Étape 2 : Ajoutez les options « Chene » et « Pieds inox » à ces meubles
     fa120_1->ajouterOption(std::make_unique<Materiau>("Chene", 0.1));
@@ -39,7 +39,7 @@ int main()
               << *fa120_4;
 
     // Étape 4 : Créez un objet Meuble pour l'éléments « FD 40 » (angle)
-    auto fd40_1 = std::make_unique<Meuble>("FD 40", 23, 40, 70, 112);
+    auto fd40_1 = std::make_unique<Meuble>("FD 40", 23, 0, 40, 70, 112);
 
     // Étape 5 : Ajoutez les options « Chene » et « Pieds inox » à ce meuble
     fd40_1->ajouterOption(std::make_unique<Materiau>("Chene", 0.1));
@@ -49,8 +49,8 @@ int main()
     std::cout << *fd40_1;
 
     // Étape 7 : Créez deux objets Meuble pour les éléments « FA 80 »
-    auto fa80_1 = std::make_unique<Meuble>("FA 80", 49, 80, 70, 56);
-    auto fa80_2 = std::make_unique<Meuble>("FA 80", 49, 80, 70, 56);
+    auto fa80_1 = std::make_unique<Meuble>("FA 80", 49, 0, 80, 70, 56);
+    auto fa80_2 = std::make_unique<Meuble>("FA 80", 49, 0, 80, 70, 56);
 
     // Étape 8 : Ajoutez les options « Chene » et « Pieds inox » à ces meubles
     fa80_1->ajouterOption(std::make_unique<Materiau>("Chene", 0.1));
@@ -60,10 +60,10 @@ int main()
     fa80_2->ajouterOption(std::make_unique<Pieds>("Inox", 5));
 
     // Étape 9 : Créez un objet ElementCuisine pour le plan de travail « NUMERAR 160 »
-    auto numerar160 = std::make_unique<ElementCuisine>("NUMERAR 160", 100);
+    auto numerar160 = std::make_unique<ElementCuisine>("NUMERAR 160", 100, 0);
 
     // Étape 10 : Créez un autre objet ElementCuisine pour la console « CAPITA 160 »
-    auto capita160 = std::make_unique<ElementCuisine>("CAPITA 160", 50);
+    auto capita160 = std::make_unique<ElementCuisine>("CAPITA 160", 50, 0);
 
     // Étape 11 : Créez un objet Ilot pour BX 160
     Ilot bx160("BX 160");

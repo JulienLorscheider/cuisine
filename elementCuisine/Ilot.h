@@ -12,7 +12,9 @@ private:
     std::vector<std::unique_ptr<ElementCuisine>> elements;
 
 public:
-    Ilot(std::string d) : ElementCuisine(d, 0) {}
+    Ilot(std::string d) : ElementCuisine(d, 0, 0)
+    {
+    }
 
     void ajouterElement(std::unique_ptr<ElementCuisine> element)
     {
