@@ -11,15 +11,6 @@ class Pieds : public Option
 private:
     double prixParPied;
 
-    void copier(const Pieds &orig)
-    {
-        prixParPied = orig.prixParPied;
-    }
-
-    ~Pieds()
-    {
-    }
-
 public:
     Pieds(const std::string &description, double p) : Option(description), prixParPied(p)
     {
@@ -27,11 +18,6 @@ public:
         {
             throw std::invalid_argument("Prix par pied ne peut pas être négatif");
         }
-    }
-
-    Pieds(const Pieds &orig) : Option(orig)
-    {
-        copier(orig);
     }
 
     double getMajoration(const Meuble &meuble) const override
@@ -52,5 +38,11 @@ public:
         s << std::string(indentation + 1, '\t') << "Prix par pied: " << prixParPied << "€\n";
     }
 };
+
+inline std::ostream &operator<<(std::ostream &s, const Pieds &op)
+{
+    op.affiche(s);
+    return s;
+}
 
 #endif

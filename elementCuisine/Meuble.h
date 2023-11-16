@@ -25,8 +25,8 @@ private:
     }
 
 public:
-    Meuble(std::string d, double p, double r, double l, double h, double prof)
-        : ElementCuisine(d, p, r), largeur(l), hauteur(h), profondeur(prof)
+    Meuble(std::string d, double p, double l, double h, double prof)
+        : ElementCuisine(d, p), largeur(l), hauteur(h), profondeur(prof)
     {
         if (l <= 0 || h <= 0 || prof <= 0)
         {
@@ -34,10 +34,7 @@ public:
         }
     }
 
-    Meuble(const Meuble &orig) : ElementCuisine(orig)
-    {
-        copier(orig);
-    }
+    Meuble(const Meuble &orig) : ElementCuisine(orig) { copier(orig); }
 
     double getLargeur() const
     {
@@ -57,11 +54,6 @@ public:
     const std::vector<std::unique_ptr<Option>> &getOptions() const
     {
         return options;
-    }
-
-    std::unique_ptr<ElementCuisine> clone() const override
-    {
-        return std::make_unique<Meuble>(*this);
     }
 
     const Meuble &operator=(const Meuble &op)
@@ -112,5 +104,11 @@ public:
         }
     }
 };
+
+inline std::ostream &operator<<(std::ostream &s, const Meuble &op)
+{
+    op.affiche(s);
+    return s;
+}
 
 #endif
